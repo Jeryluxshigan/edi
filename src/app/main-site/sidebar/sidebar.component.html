@@ -1,0 +1,11 @@
+<div class="sidebar" [ngClass]="{ 'open': isSidebarOpen }">
+    <button class="close-button" *ngIf="isSidebarOpen" (click)="toggleSidebar()">Close</button>
+    <ul>
+      <li><a href="#">Item 1</a></li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+      <!-- Add more items as needed -->
+    </ul>
+   
+</div>
+  

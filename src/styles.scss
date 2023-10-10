@@ -1,1 +1,737 @@
-/* You can add global styles to this file, and also import other style files */
+/* global style */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+:root {
+    --primary-color: #4B51B9;
+    --secondory-color: #E4E7EB;
+    --tertiary-color: #6F42C1;
+    --selections-color: #E9EAF6;
+    --text-color: #212529;
+    --footer-text-color: #777777;
+    --Horizontal-Vertical-dividers-color: #DEE2E6;
+    --active-status: rgb(2, 173, 56);
+    --color: #ffff;
+    --table-headder: #d1d2f1;
+    --table-data: red;
+    --errors: rgb(255, 167, 168);
+    --error-text: rgb(130, 0, 0);
+    --warnings: rgb(248, 248, 178);
+    --warning-text: rgb(147, 147, 3);
+    --box-shadow: rgba(114, 114, 114, 0.091);
+    --font-family: 'Poppins';
+    --font-size: 0.85rem !important;
+}
+
+* {
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: var(--secondory-color);
+}
+
+/* Compatibility */
+@media screen and (max-width: 1366px) {
+    .some-element {
+        font-size: 16px; // Adjust font size for smaller screens
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .some-element {
+        font-size: 24px; // Increase font size for larger screens
+    }
+}
+
+/* landing page component */
+.home-container {
+    margin-top: 160px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 160px;
+    margin-top: 60px;
+}
+
+.col-1 {
+    margin-left: 45px;
+}
+
+.col-2 {
+    margin-left: 20px;
+}
+
+.icon-card {
+    margin: 10px;
+    height: 50px;
+    border: none;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+    margin-top: 12px;
+}
+
+.icn-name {
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: var(--primary-color);
+}
+
+/* Footercomponent */
+footer {
+    display: block;
+    text-align: right;
+    padding: 2px 10px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--footer-text-color);
+    font-family: var(--font-family);
+}
+
+/* Headder component */
+kendo-appbar {
+    height: 60px;
+    margin: 0 -10px;
+}
+
+.k-appbar-light {
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: var(--font-family);
+    color: var(--color);
+}
+
+.appbar-items {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-family);
+    color: var(--color);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+}
+
+.nav-item {
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color);
+    transition: border-bottom 0.3s;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid var(--color);
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--color);
+}
+
+.active span {
+    text-decoration: underline;
+}
+
+.actions .k-button {
+    padding: 0;
+}
+
+kendo-badge-container {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    border-color: var(--color);
+    background-color: var(--color);
+}
+
+.notification {
+    margin: 6px 6px;
+}
+
+.profile-img {
+    height: 35px;
+    width: 35px;
+    border-radius: 30px;
+}
+
+.username {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-family);
+    color: var(--color);
+}
+
+.dropdown {
+    color: var(--color);
+}
+
+/* Container for entire content */
+.container {
+    display: flex;
+    background-color: var(--secondory-color);
+    margin-top: 60px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s;
+    width: 100%;
+    margin: 10px;
+    height: calc(100vh - 60px);
+}
+
+/* Body container */
+.body-container {
+    flex: 1;
+    transition: margin-left 0.3s;
+    width: 100%;
+    background-color: var(--color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px 4px var(--box-shadow);
+    height: calc(100vh - 60px);
+    margin-top: 10px;
+}
+
+
+app-button-container {
+    margin-top: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 0;
+    height: calc(100vh - 60px);
+    background-color: var(--color);
+    left: -200px;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    margin-left: -10px;
+    position: fixed;
+}
+
+/* When the sidebar is open, adjust the width and margin of the body container */
+.container.open-sidebar .body-container {
+    margin-left: 245px;
+    margin-top: 3px;
+    width: calc(100% - 240px);
+}
+
+.container.open-sidebar .sidebar {
+    width: 250px;
+    margin-left: 200px;
+    margin-top: 60px;
+}
+
+.filter-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border-color: var(--color);
+    background-color: var(--color);
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+.filter {
+    background-color: var(--color);
+    color: var(--primary-color);
+    border: none;
+    margin: 11px 4px;
+}
+
+/* Main Body */
+.main-title {
+    font-size: 28px;
+    font-weight: light;
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    margin: 15px 20px;
+}
+
+.k-tabstrip {
+    font-family: var(--font-family);
+    padding: 10px;
+}
+
+.k-tabstrip-items-wrapper .k-item {
+    color: var(--primary-color);
+}
+
+.k-checkbox:checked,
+.k-checkbox.k-checked {
+    color: var(--color);
+    background-color: var(--primary-color);
+}
+
+
+.k-table-thead,
+.k-table-header,
+.k-table-group-sticky-header {
+    background-color: var(--table-headder);
+
+}
+
+.k-table-th,
+.k-table-td {
+    font-size: 12px;
+}
+
+.Status {
+    color: var(--table-data);
+}
+
+.Status-active {
+    color: var(--active-status);
+}
+
+.head-section {
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-filter {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+.close-btn {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.separator {
+    color: var(--Horizontal-Vertical-dividers-color);
+}
+
+/* line sidebar*/
+.sidebar-content {
+    padding: 0px 15px;
+}
+
+.drop-title {
+    font-family: var(--font-family);
+    font-size: 12px;
+}
+
+.group-container {
+    margin-top: 10px;
+}
+
+.k-input-inner {
+    font-family: var(--font-family);
+    font-size: 12px;
+}
+
+.switch-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.k-switch-on .k-switch-track {
+    background-color: var(--color);
+    border-color: var(--footer-text-color);
+    color: var(--text-color);
+}
+
+.k-switch-on:focus .k-switch-track,
+.k-switch-on.k-focus .k-switch-track {
+    outline: 2px solid var(--primary-color);
+}
+
+.checkbox-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.check-title {
+    font-family: var(--font-family);
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.k-checkbox:checked,
+.k-checkbox.k-checked {
+    background-color: var(--primary-color);
+    border-color: var(--footer-text-color);
+}
+
+.check-text {
+    font-family: var(--font-family);
+    font-size: 12px;
+    margin-left: 30px;
+    color: var(--table-data);
+    margin-bottom: 30px;
+}
+
+.mandatory {
+    margin-top: 10px;
+}
+
+.required {
+    color: var(--table-data);
+    margin-left: 5px;
+}
+
+/* button container */
+app-button-container {
+    margin-top: 15px;
+    transition: margin-left 0.3s;
+}
+
+/* When the sidebar is open, adjust the margin-left of the button container */
+.container.open-sidebar app-button-container {
+    margin-left: 250px;
+}
+
+.group-left {
+    display: flex;
+}
+
+.outline-btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 12px;
+    font-family: var(--font-family);
+}
+
+.outline-btn:hover{
+    border-color: var(--text-color);
+    color: var(--text-color);
+    background-color: var(--secondory-color);
+}
+
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--secondory-color);
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--font-family);
+    margin-left: 16px;
+}
+.icon-btn:hover{
+    background-color: var(--secondory-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.row-btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -2px;
+}
+
+.group-rigt {
+    display: flex;
+}
+
+.k-switch-label-off {
+    font-family: var(--font-family);
+}
+
+.k-switch-label-on {
+    font-family: var(--font-family);
+}
+
+app-generic-button-container {
+    margin-top: 15px;
+    transition: margin-left 0.3s;
+}
+
+/* When the sidebar is open, adjust the margin-left of the button container */
+.container.open-sidebar app-generic-button-container {
+    margin-left: 250px;
+}
+
+/* model */
+.k-window {
+    background-color: var(--secondory-color);
+    height: 95vh;
+}
+
+.k-window-titlebar {
+    background-color: var(--secondory-color);
+}
+
+.model-container1 {
+    width: 100%;
+    height: 25vh;
+    background-color: var(--color);
+    padding-top: 10px;
+    box-shadow: 0 4px 6px 4px var(--box-shadow);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.model-container2 {
+    width: 100%;
+    height: 25vh;
+    background-color: var(--color);
+    padding-top: 12px;
+    box-shadow: 0 4px 6px 4px var(--box-shadow);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.model-container3 {
+    width: 100%;
+    height: 30vh;
+    background-color: var(--color);
+    padding-top: 12px;
+    box-shadow: 0 4px 6px 4px var(--box-shadow);
+    border-radius: 8px;
+}
+
+/* Height Adjustment for switch stage */
+.container-switch-on {
+    height: auto;
+}
+
+.container-switch-off {
+    height: 25vh;
+}
+
+.container3-switch-on {
+    height: 50vh;
+}
+
+.container3-switch-off {
+    height: 30vh;
+}
+
+.model-container4 {
+    width: 100%;
+    height: 80vh;
+    background-color: var(--color);
+    padding-top: 20px;
+    box-shadow: 0 4px 6px 4px var(--box-shadow);
+    border-radius: 8px;
+}
+
+.model-close {
+    margin-left: 1140px;
+    margin-top: -20px;
+}
+
+.model-title {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    margin: 10px 15px;
+}
+
+.group-rigt-align {
+    display: flex;
+    padding-right: 15px;
+}
+
+.model-dropdown {
+    height: 30px;
+    width: 100px;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    justify-content: center;
+    background-color: var(--secondory-color);
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--font-family);
+    margin-left: 16px;
+}
+
+.k-button-text {
+    display: flex;
+}
+
+.btn-txt {
+    padding-left: 5px;
+}
+
+.text-box {
+    width: 195px;
+}
+
+.model-row {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    font-size: var(--font-size);
+    gap: 40px;
+}
+
+.rigt-align {
+    padding-right: 15px;
+}
+
+.errors {
+    margin-left: 15px;
+    height: 45px;
+    width: 370px;
+    background-color: var(--errors);
+    margin-top: -12px;
+}
+
+.error-list {
+    list-style-type: disc;
+    color: var(--error-text);
+    font-size: var(--font-size);
+    margin-left: 12px;
+    padding-top: 4px;
+}
+
+.error {
+    display: block;
+}
+
+.warnings {
+    margin-left: 15px;
+    height: 45px;
+    width: 750px;
+    background-color: var(--warnings);
+    margin-top: -4px;
+}
+
+.warning-list {
+    list-style-type: disc;
+    color: var(--warning-text);
+    font-size: var(--font-size);
+    margin-left: 12px;
+    padding-top: 4px;
+}
+
+.datepickercontent {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.side-btngrp {
+    display: flex;
+    gap: 12px;
+}
+
+.side-btn {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--secondory-color);
+    font-size: 12px;
+    font-weight: 400;
+    font-family: var(--font-family);
+}
+
+.side-btn:hover{
+    background-color: var(--color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.side-outline-btn {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 12px;
+    font-family: var(--font-family);
+}
+
+.side-outline-btn:hover{
+    border-color: var(--text-color);
+    color: var(--text-color);
+    background-color: var(--color);
+}
+
+.row-button {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 15px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.group-buttons {
+    display: flex;
+}
+
+.fullview-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font-family);
+    margin-left: 16px;
+}
+
+.dialog-text {
+    text-align: center;
+    margin: 30px;
+}
+
+.warning-error {
+    color: var(--table-data);
+
+}

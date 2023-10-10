@@ -1,0 +1,242 @@
+<div class="row-btn">
+    <div class="group-left">
+        <button kendoButton fillMode="outline" class="outline-btn">Back</button>
+        <button kendoButton fillMode="solid" class="icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-file-earmark-excel" viewBox="0 0 16 16">
+                <path
+                    d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z" />
+                <path
+                    d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+            </svg>
+            <span class="btn-txt">
+                Export to Excel
+            </span>
+
+        </button>
+    </div>
+    <div class="group-rigt">
+        <button kendoButton *ngIf="!opened" (click)="open()" class="icon-btn">Validation Report</button>
+        <kendo-dialog *ngIf="opened" (close)="close()" [minWidth]="1200" [width]="1200">
+            <button kendoButton fillMode="flat" (click)="close()" class="model-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" class="bi bi-x-lg"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                </svg>
+            </button>
+            <div class="model-container1">
+                <div class="row-btn">
+                    <div class="group-left">
+                        <div class="model-title">
+                            Validation Error Report
+                        </div>
+                    </div>
+                    <div class="group-rigt-align">
+                        <kendo-dropdownlist class="model-dropdown"></kendo-dropdownlist>
+                        <button kendoButton fillMode="solid" class="export-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" fill="currentColor"
+                                class="bi bi-upload" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+                            </svg>
+                            <span class="btn-txt">
+                                Export
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="model-row row-cols-5">
+                    <div class="col">
+                        PO
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Status
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Account
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        EDI
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Master PO
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+
+                </div>
+                <div class="model-row row-cols-5">
+                    <div class="col">
+                        Purpose Code
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Order Cat
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Order Source
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Do not ship before
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                    <div class="col">
+                        Master PO
+                        <kendo-textbox class="text-box"></kendo-textbox>
+                    </div>
+                </div>
+            </div>
+            <div class="model-container2"
+                [ngClass]="{'container-switch-on': isSwitchOn, 'container-switch-off': !isSwitchOn}">
+                <div class="row-btn">
+                    <div class="group-left">
+                        <div class="model-title">
+                            Header Leval Errors And Warnings
+                        </div>
+                    </div>
+                    <div class="rigt-align">
+                        Hide Header Leval Errors/Warnings
+                        <kendo-switch (valueChange)="onSwitchChange($event)" size="small"
+                            class="container-switch"></kendo-switch>
+                    </div>
+                </div>
+                <div *ngIf="!isSwitchOn">
+                    <div class="errors">
+                        <ul class="error">
+                            <li class="error-list">
+                                NewShipto - M3 Address Code Cannot Be Found
+                            </li>
+                            <li class="error-list">
+                                Shiptoaddress - Address line 1 Missing From MDM
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="warnings">
+                        <ul class="error">
+                            <li class="warning-list">
+                                Newpamentmethod - Defaulted From Customer
+                            </li>
+                            <li class="warning-list">
+                                Newcustomerpodate - Customer Order Date Is Not Current.It Is 10 Or More Days Before The
+                                Received Date.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="model-container3"
+                [ngClass]="{'container3-switch-on': isSwitchOn, 'container3-switch-off': !isSwitchOn}">
+                <div class="row-button">
+                    <div class="group-buttons">
+                        <kendo-dropdownlist class="model-dropdown"></kendo-dropdownlist>
+                        <button kendoButton fillMode="clear" class="fullview-btn" (click)="openFullviewDialog()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-fullscreen" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z" />
+                            </svg>
+                            <span class="btn-txt">
+                                Expand
+                            </span>
+                        </button>
+                        <kendo-dialog *ngIf="fullviewDialogOpened" [width]="1250">
+                            <div class="model-container4">
+                                <div class="row-button">
+                                    <div class="group-buttons">
+                                        <kendo-dropdownlist class="model-dropdown"></kendo-dropdownlist>
+                                        <button kendoButton fillMode="clear" class="fullview-btn"
+                                            (click)="closeFullviewDialog()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-fullscreen-exit" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 0a.5.5 0 0 1 .5.5v4A1.5 1.5 0 0 1 4.5 6h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5zm5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 10 4.5v-4a.5.5 0 0 1 .5-.5zM0 10.5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 6 11.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zm10 1a1.5 1.5 0 0 1 1.5-1.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4z" />
+                                            </svg>
+                                            <span class="btn-txt">
+                                                Collapse
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <kendo-grid [data]="gridData" kendoGridSelectBy="id">
+                                    <kendo-grid-checkbox-column [width]="40" [headerClass]="{ 'text-center': true }"
+                                        [class]="{ 'text-center': true }" [resizable]="false" [columnMenu]="false"
+                                        [showSelectAll]="true">
+                                    </kendo-grid-checkbox-column>
+                                    <ng-template kendoGridDetailTemplate let-dataItem let-rowIndex="rowIndex">
+                                    </ng-template>
+                                    <kendo-grid-column field="line" title="Lines"> </kendo-grid-column>
+                                    <kendo-grid-column field="warning" title="Warnings/Errors" class="warning-error"
+                                        [width]="250"> </kendo-grid-column>
+                                    <kendo-grid-column field="brand" title="Brand"> </kendo-grid-column>
+                                    <kendo-grid-column field="m3style" title="M3 Stle"> </kendo-grid-column>
+                                    <kendo-grid-column field="upc" title="UPC Num"> </kendo-grid-column>
+                                    <kendo-grid-column field="customitem" title="Custom Itm"> </kendo-grid-column>
+                                    <kendo-grid-column field="m3item" title="M3 Item" [width]="120">
+                                    </kendo-grid-column>
+                                    <kendo-grid-column field="color" title="Color"> </kendo-grid-column>
+                                    <kendo-grid-column field="size" title="Size"> </kendo-grid-column>
+                                    <kendo-grid-column field="qty" title="Qty"> </kendo-grid-column>
+                                </kendo-grid>
+                            </div>
+                        </kendo-dialog>
+                    </div>
+                </div>
+                <kendo-grid [data]="gridData" kendoGridSelectBy="id" [size]="smallSize">
+                    <kendo-grid-checkbox-column [width]="40" [headerClass]="{ 'text-center': true }"
+                        [class]="{ 'text-center': true }" [resizable]="false" [columnMenu]="false"
+                        [showSelectAll]="true">
+                    </kendo-grid-checkbox-column>
+                    <ng-template kendoGridDetailTemplate let-dataItem>
+                    </ng-template>
+                    <kendo-grid-column field="line" title="Lines"> </kendo-grid-column>
+                    <kendo-grid-column field="warning" title="Warnings/Errors" class="warning-error" [width]="240">
+                    </kendo-grid-column>
+                    <kendo-grid-column field="brand" title="Brand"> </kendo-grid-column>
+                    <kendo-grid-column field="m3style" title="M3 Stle"> </kendo-grid-column>
+                    <kendo-grid-column field="upc" title="UPC Num"> </kendo-grid-column>
+                    <kendo-grid-column field="customitem" title="Custom Itm"> </kendo-grid-column>
+                    <kendo-grid-column field="m3item" title="M3 Item" [width]="120"> </kendo-grid-column>
+                    <kendo-grid-column field="color" title="Color"> </kendo-grid-column>
+                    <kendo-grid-column field="size" title="Size"> </kendo-grid-column>
+                    <kendo-grid-column field="qty" title="Qty"> </kendo-grid-column>
+                </kendo-grid>
+            </div>
+        </kendo-dialog>
+
+        <button kendoButton fillMode="solid" class="icon-btn"> Process Selected</button>
+        <button kendoButton fillMode="solid" class="icon-btn" (click)="openRejectDialog()">Reject</button>
+        <button kendoButton fillMode="solid" class="icon-btn" (click)="openAcceptDialog()">Accept</button>
+
+        <!-- Accept Dialog -->
+        <kendo-dialog *ngIf="acceptDialogOpened" (close)="closeAcceptDialog()" title="Please Confirm" [minWidth]="250"
+            [width]="450">
+            <div class="dialog-text">
+                Do you Want To Accecpt?
+            </div>
+            <kendo-dialog-actions>
+                <button kendoButton (click)="close()">Cancell</button>
+                <button kendoButton (click)="close()" fillMode="solid" class="icon-btn">Yes</button>
+            </kendo-dialog-actions>
+        </kendo-dialog>
+
+        <!-- Reject Dialog -->
+        <kendo-dialog *ngIf="rejectDialogOpened" (close)="closeRejectDialog()" title="Please Confirm" [minWidth]="250"
+            [width]="450">
+            <div class="dialog-text">
+                Do you Want To Reject?
+            </div>
+            <kendo-dialog-actions>
+                <button kendoButton (click)="close()">Cancell</button>
+                <button kendoButton (click)="close()" fillMode="solid" class="icon-btn">Yes</button>
+            </kendo-dialog-actions>
+        </kendo-dialog>
+    </div>
+</div>

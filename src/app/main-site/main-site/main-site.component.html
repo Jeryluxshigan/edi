@@ -1,0 +1,45 @@
+<!-- Header -->
+<app-headder></app-headder>
+<!-- Container for the entire content -->
+<div class="container" [class.open-sidebar]="isSidebarOpen">
+  <!-- Button to toggle the sidebar -->
+  <div class="filter-button" *ngIf="!isSidebarOpen">
+  <button (click)="toggleSidebar()" class="filter" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill"
+      viewBox="0 0 16 16">
+      <path
+        d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z" />
+    </svg>
+  </button>
+</div>
+  <div class="sidebar" *ngIf="isSidebarOpen">
+    <!-- Sidebar content goes here -->
+    <!-- For example, you can include your sidebar components here -->
+    <div class="head-section">
+      <div class="title-filter">
+        Filter
+      </div>
+      <div class="close-btn" (click)="toggleSidebar()">
+        Close
+      </div>
+    </div>
+    <hr class="separator">
+    <div *ngIf="isLinesTabActive">
+      <app-lines-sidebar></app-lines-sidebar>
+    </div>
+    <!-- Container for Charges sidebar -->
+    <div *ngIf="isChargesTabActive">
+      <app-charges-sidebar></app-charges-sidebar>
+    </div>
+  </div>
+  <!-- Main content area (body) -->
+  <div class="flex-container">
+    <div class="body-container">
+    
+    </div>
+    <app-button-container [isSidebarOpen]="isSidebarOpen"></app-button-container>
+  </div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

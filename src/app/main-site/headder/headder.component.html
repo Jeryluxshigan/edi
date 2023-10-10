@@ -5,9 +5,9 @@
     </kendo-appbar-section>
     <kendo-appbar-section class="appbar-items">
         <ul>
-            <li class="nav-item"><a class="nav-link" href="#">Order List</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Generic EDI</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Rules Engine</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="['/orderlist']">Order List</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="['/generic-edi']">Generic EDI</a></li>
+            <li class="nav-item"><a class="nav-link" [routerLink]="['/rules-engine']">Rules Engine</a></li>
         </ul>
     </kendo-appbar-section>
     <kendo-appbar-spacer></kendo-appbar-spacer>
@@ -15,8 +15,8 @@
         <kendo-badge-container>
             <button kendoButton fillMode="flat" class="notification">
                 <kendo-svg-icon [icon]="bellIcon"></kendo-svg-icon>
+                <kendo-badge shape="dot" themeColor="warning" size="small" position="inside"></kendo-badge>
             </button>
-            <kendo-badge shape="dot" themeColor="warning" size="small" position="inside"></kendo-badge>
         </kendo-badge-container>
     </kendo-appbar-section>
     <kendo-appbar-section>
@@ -26,7 +26,7 @@
     </kendo-appbar-section>
     <kendo-appbar-section class="username">
         Dasun Perera
+        <kendo-svg-icon [icon]="chevronDownIcon" class="dropdown"></kendo-svg-icon>
     </kendo-appbar-section>
-    <kendo-svg-icon [icon]="chevronDownIcon" class="dropdown"></kendo-svg-icon>
     <kendo-appbar-spacer width="20px"></kendo-appbar-spacer>
 </kendo-appbar>

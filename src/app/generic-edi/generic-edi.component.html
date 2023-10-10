@@ -24,20 +24,28 @@
       </div>
     </div>
     <hr class="separator">
-    <div *ngIf="isLinesTabActive">
-      <app-lines-sidebar></app-lines-sidebar>
-    </div>
-    <!-- Container for Charges sidebar -->
-    <div *ngIf="isChargesTabActive">
-      <app-charges-sidebar></app-charges-sidebar>
-    </div>
+    <app-genericedi-sidebar></app-genericedi-sidebar>
   </div>
   <!-- Main content area (body) -->
   <div class="flex-container">
     <div class="body-container">
-    
+      <div class="main-title">
+        Generic EDI Viewer
+      </div>
+      <kendo-grid [data]="gridData">
+        <kendo-grid-column field="doc" title="Doc Type"  > </kendo-grid-column>
+        <kendo-grid-column field="po" title="PO Number" > </kendo-grid-column>
+        <kendo-grid-column field="Account" title="Account Number" > </kendo-grid-column>
+        <kendo-grid-column field="customerpo" title="Customer PO" > </kendo-grid-column>
+        <kendo-grid-column field="control" title="Control Number" > </kendo-grid-column>
+        <kendo-grid-column field="company" title="Company" > </kendo-grid-column>
+        <kendo-grid-column field="customer" title="Customer"  > </kendo-grid-column>
+        <kendo-grid-column field="invoice" title="Invoice Number" > </kendo-grid-column>
+        <kendo-grid-column field="order" title="Order Number"> </kendo-grid-column>
+        <kendo-grid-column field="shipment" title="Shipment"> </kendo-grid-column>
+      </kendo-grid>
     </div>
-    <app-button-container [isSidebarOpen]="isSidebarOpen"></app-button-container>
+    <app-generic-button-container></app-generic-button-container>
   </div>
 </div>
 

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrderLinesComponent } from './order-lines.component';
+import { LinesSidebarComponent } from './lines-sidebar.component';
 
-describe('OrderLinesComponent', () => {
-  let component: OrderLinesComponent;
-  let fixture: ComponentFixture<OrderLinesComponent>;
+describe('LinesSidebarComponent', () => {
+  let component: LinesSidebarComponent;
+  let fixture: ComponentFixture<LinesSidebarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderLinesComponent ]
+      declarations: [ LinesSidebarComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OrderLinesComponent);
+    fixture = TestBed.createComponent(LinesSidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,6 +11,6 @@ export class LandingPageComponent {
   constructor(private router: Router) { }
 
   navigateToMainSite() {
-    this.router.navigate(['/main-site']); // Navigate to the 'main-site' route
+    this.router.navigate(['/orderlist']); // Navigate to the 'main-site' route
   }
 }

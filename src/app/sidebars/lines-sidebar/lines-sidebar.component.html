@@ -1,0 +1,77 @@
+<div class="sidebar-content">
+    <!-- Content to be conditionally displayed when the switch is turned off -->
+    <div *ngIf="!isSwitchOn" class="group-container">
+        <div class="dropdown-area">
+            <kendo-label class="drop-title">Order Processing Flag</kendo-label>
+            <kendo-dropdownlist class="custom-dropdown"></kendo-dropdownlist>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">Address</kendo-label>
+            <kendo-textarea [rows]="4" resizable="vertical"></kendo-textarea>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">Ship To</kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="group-container" >
+            <kendo-label class="drop-title">Do Not Ship Before</kendo-label>
+            <kendo-datepicker></kendo-datepicker>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">Ship Cancell Date</kendo-label>
+            <kendo-datepicker></kendo-datepicker>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">Customer PO Date</kendo-label>
+            <kendo-datepicker></kendo-datepicker>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">Request Delivery Date</kendo-label>
+            <kendo-datepicker></kendo-datepicker>
+        </div>
+    </div>
+    <!-- Content to be conditionally displayed when the switch is turned on -->
+    <div *ngIf="isSwitchOn" class="group-container">
+        <div class="dropdown-area">
+            <kendo-label class="drop-title">Status</kendo-label>
+            <kendo-dropdownlist class="custom-dropdown"></kendo-dropdownlist>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">M3 CO</kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="mandatory">
+            <kendo-label class="drop-title">Payment Team <span class="required">*</span></kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="mandatory">
+            <kendo-label class="drop-title">Delivery Team <span class="required">*</span></kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">Order Category</kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="group-container">
+            <kendo-label class="drop-title">CO Type</kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="mandatory">
+            <kendo-label class="drop-title">Payment Method <span class="required">*</span></kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+        <div class="mandatory">
+            <kendo-label class="drop-title">Delivery Delivery <span class="required">*</span></kendo-label>
+            <kendo-textbox></kendo-textbox>
+        </div>
+    </div>
+    <div class="switch-content">
+        <kendo-label class="drop-title">Hide Additional Fields</kendo-label>
+        <kendo-switch (valueChange)="onSwitchChange($event)" size="small"></kendo-switch>
+    </div>
+    <div class="checkbox-content">
+        <input type="checkbox" #notification kendoCheckBox />
+        <kendo-label class="check-title">Accept/Reject Header Changes</kendo-label>
+    </div>
+    <p class="check-text">Rejected</p>
+</div>

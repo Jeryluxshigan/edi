@@ -8,7 +8,10 @@ import { chevronDownIcon } from "@progress/kendo-svg-icons";
   styleUrls: ['./headder.component.scss']
 })
 export class HeadderComponent {
+  public show = true;
   public bellIcon: SVGIcon = bellIcon;
   public chevronDownIcon: SVGIcon = chevronDownIcon;
+
+  
 
 }

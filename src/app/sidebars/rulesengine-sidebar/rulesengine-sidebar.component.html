@@ -1,0 +1,23 @@
+<div class="sidebar-content">
+    <div class="dropdown-area">
+        <kendo-label class="drop-title">Rule Number</kendo-label>
+        <kendo-dropdownlist class="custom-dropdown"></kendo-dropdownlist>
+    </div>
+    <div class="group-container">
+        <kendo-label class="drop-title">Rule Name</kendo-label>
+        <kendo-textbox></kendo-textbox>
+    </div>
+    <div class="group-container">
+        <kendo-label class="drop-title">Rule Description</kendo-label>
+        <kendo-textarea [rows]="4" resizable="vertical"></kendo-textarea>
+    </div>
+    <div class="group-container">
+        <kendo-label class="drop-title">Type</kendo-label>
+        <kendo-dropdownlist class="custom-dropdown"></kendo-dropdownlist>
+    </div>
+    <br>
+    <div class="side-btngrp">
+        <button kendoButton fillMode="solid" class="side-btn">Search</button>
+        <button kendoButton fillMode="outline" class="side-outline-btn">Clear</button> 
+    </div>
+</div>

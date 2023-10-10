@@ -14,8 +14,30 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { PopupModule } from '@progress/kendo-angular-popup';
-import { SidebarComponent } from './main-site/sidebar/sidebar.component';
-import { OrderLinesComponent } from './main-site/order-lines/order-lines.component';
+import { LinesSidebarComponent } from './sidebars/lines-sidebar/lines-sidebar.component';
+import { ChargesSidebarComponent } from './sidebars/charges-sidebar/charges-sidebar.component';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { ButtonContainerComponent } from './button-container/button-container.component';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { LabelModule } from '@progress/kendo-angular-label';
+import { OrderlistComponent } from './orderlist/orderlist.component';
+import { GenericEdiComponent } from './generic-edi/generic-edi.component';
+import { GenericediSidebarComponent } from './sidebars/genericedi-sidebar/genericedi-sidebar.component';
+import { RulesengineSidebarComponent } from './sidebars/rulesengine-sidebar/rulesengine-sidebar.component';
+import { RulesEngineComponent } from './rules-engine/rules-engine.component';
+import { GenericButtonContainerComponent } from './generic-button-container/generic-button-container.component';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31,8 +53,17 @@ import { OrderLinesComponent } from './main-site/order-lines/order-lines.compone
     MainSiteComponent,
     HeadderComponent,
     FooterComponent,
-    SidebarComponent,
-    OrderLinesComponent
+    LinesSidebarComponent,
+    ChargesSidebarComponent,
+    ButtonContainerComponent,
+    OrderlistComponent,
+    GenericEdiComponent,
+    GenericediSidebarComponent,
+    RulesengineSidebarComponent,
+    RulesEngineComponent,
+    GenericButtonContainerComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
@@ -43,7 +74,13 @@ import { OrderLinesComponent } from './main-site/order-lines/order-lines.compone
     IndicatorsModule,
     IconsModule,
     InputsModule,
-    PopupModule
+    PopupModule,
+    GridModule,
+    DropDownsModule,
+    DateInputsModule,
+    ButtonsModule,
+    LabelModule,
+    DialogsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
